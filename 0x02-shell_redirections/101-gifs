@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la
+find . -path "*.gif" | rev | cut -f 2- -d '.' |rev | sort -i
