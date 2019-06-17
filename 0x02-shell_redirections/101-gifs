@@ -1,2 +1,7 @@
 #!/bin/bash
+<<<<<<< HEAD
 ls -la
+=======
+find -r | sort | head
+ 
+>>>>>>> 3d59f3ae7c88eebd0b9bb3b96e365d602e787d22
