@@ -1,2 +1,2 @@
 #!/bin/bash
-perl -lne '$.%2 or print;' | rev | cut -f 1 -d: | rev
+paste -d " " - - | tr " " "\t" | cut -f 9
