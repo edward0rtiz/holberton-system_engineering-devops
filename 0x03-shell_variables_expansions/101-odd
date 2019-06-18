@@ -1,2 +1,2 @@
 #!/bin/bash
-paste -d " " - - | tr " " "\t" | cut -f 9
+find . -type f  -printf '%f\n' | perl -ne 'print unless (0 != $. % 2)' | sort
