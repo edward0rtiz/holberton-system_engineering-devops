@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f  -printf '%f\n' | perl -ne 'print unless (0 != $. % 2)' | sort
+find . -type f  -printf '%f\n' | perl -ne 'print unless (1 != $. % 2)' | sort
