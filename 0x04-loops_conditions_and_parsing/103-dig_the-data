@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Soort the data from parsing apache IP by Ocurrence, list and from low number of ocurrences
+
+awk '{ print $1 " " $9 }' apache-access.log | sort | uniq -c | sort -rn
