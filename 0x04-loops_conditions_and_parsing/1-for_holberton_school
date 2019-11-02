@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
 
-for i in {1..10}
+LIST="$i"
+for i in "$LIST" {1..10}
 do
     WORD="Holberton School"
     echo "$WORD"
