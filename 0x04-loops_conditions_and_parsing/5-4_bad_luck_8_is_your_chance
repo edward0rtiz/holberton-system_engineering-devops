@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Print bad luck for the 4 time, good luck for the 8 time and Holberton School for the rest
+
+i="0"
+
+while [ $i -lt 10 ]
+do
+	if [ $i -eq 3 ]
+	then
+		echo "bad luck"
+	elif [ $i -eq 7 ]
+	then
+		echo "good luck"
+	else
+		echo "Holberton School"
+	fi
+	(( i++ ))
+done
