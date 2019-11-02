@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Prints a script of the luck in Italy, Japan and China
+
+i="0"
+while [ $i -le 20 ]
+do
+	echo "$i"
+	case $i in
+		"4") echo "bad luck from China";;
+		"9") echo "bad luc from Japan";;
+		"17") echo "bad luck from Italy";;
+	esac
+	(( i++ ))
+done
