@@ -2,7 +2,7 @@
 # This script is displaying "Holberton School" 10 times
 
 LIST="$i"
-for i in "$LIST" {1..10}
+for i in "$LIST" {1..9}
 do
     WORD="Holberton School"
     echo "$WORD"
