@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script print 10 times holberton school using Until
+
+i="0"
+
+until [ $i -eq 10 ]
+do
+	echo "Holberton School"
+	(( i++ ))
+done
