@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
 
-LIST="$a"
+LIST="$i"
 for i in "$LIST" {1..9}
 do
     WORD="Holberton School"
