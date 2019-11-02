@@ -7,7 +7,7 @@ do
 	echo "$i"
 	case $i in
 		"4") echo "bad luck from China";;
-		"9") echo "bad luc from Japan";;
+		"9") echo "bad luck from Japan";;
 		"17") echo "bad luck from Italy";;
 	esac
 	(( i++ ))
