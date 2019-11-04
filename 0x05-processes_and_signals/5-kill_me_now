@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Terminate program to infinity and beyond using kill
+
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
