@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#script for show IPV4 IPs
+
+ifconfig | grep -e "inet addr" | cut -d ":" -f2 | cut -d ' ' -f1
