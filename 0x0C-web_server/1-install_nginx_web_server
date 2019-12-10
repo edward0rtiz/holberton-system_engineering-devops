@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script that configures a new Ubuntu machine to respect above requirements
+
+apt-get update
+atp-get install -y nginx
+
+echo "Holberton School" | sudo tee /var/www/html/index.html
+
+service nginx restart
