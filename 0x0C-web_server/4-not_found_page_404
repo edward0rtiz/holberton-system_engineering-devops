@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Configure your Nginx server to have a custom 404 page that contains the string
 sudo apt-get update
-sudo apt-get install -y nginx
+sudo apt-get install nginx -y
 
 echo "Holberton School" | sudo tee /var/www/html/index.html
 new_string="listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/www.youtube.com\/watch?v=xJJsoquu70o\/;\\n\\t}"
