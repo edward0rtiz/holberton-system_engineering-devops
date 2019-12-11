@@ -2,15 +2,8 @@
 # Script that configures a new Ubuntu machine to respect above requirements
 
 apt-get update
-atp-get install -y nginx
+apt-get install -y nginx
 
-echo "Holberton School for the win!" > /var/www/html/index.html
-printf %s "server {
-     listen      80 default_server;
-     listen      [::]:80 default_server;
-     root        /etc/nginx/html;
-     index       index.html index.htm;
-}
-" > /etc/nginx/sites-available/default
+echo "Holberton School" | sudo tee /var/www/html/index.html
 
 service nginx restart
