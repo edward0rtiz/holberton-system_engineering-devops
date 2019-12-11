@@ -6,7 +6,7 @@ sudo apt-get install -y nginx
 echo "Holberton School" | sudo tee /var/www/html/index.html
 new_string="listen 80 default_server;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=xJJsoquu70o permanent;"
 sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+echo "Ceci n'est pas une page\n" | sudo tee /var/www/html/404.html
 new_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
 sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-available/default
 
