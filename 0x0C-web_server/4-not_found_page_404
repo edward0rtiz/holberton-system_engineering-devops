@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Configure your Nginx server to have a custom 404 page that contains the string
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Holberton School" | sudo tee /var/www/html/index.html
+new_string="listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/www.youtube.com\/watch?v=xJJsoquu70o\/ permanent;\\n\\t}"
+sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/ft_404.html
+second_string="listen 80 default_server;\\n\terror_page 404 \/ft_404.html;\\n\\tlocation = \/ft_404.html {\\n\\t\\troot \/var\/www\/html;\\n\\t\\tinternal;\\n\\t}"
+sudo sed -i "s/listen 80 default_server;/$second_string/" /etc/nginx/sites-available/default
+sudo service nginx start
