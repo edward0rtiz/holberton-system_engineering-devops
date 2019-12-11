@@ -1,21 +1,12 @@
 #!/usr/bin/env bash
 # Script that configures a new Ubuntu machine to respect above requirements
 
-apt-get update
-apt-get install -y nginx
+sudo apt-get update
+sudo apt-get install -y nginx
 
 echo "Holberton School" | sudo tee /var/www/html/index.html
-printf %s "server {
-    listen 80;
-    listen [::]:80 default_server;
-    root /var/www/html;
-    index index.html index.htm;
+new_string="listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/www.youtube.com/watch?v=xJJsoquu70o\/;\\n\\t}"
+sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-enabled/default
+sudo nginx -t
 
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
-}" > /etc/nginx/sites-available/default
-
-nginx -t
-
-service nginx restart
+sudo service nginx restart
