@@ -7,6 +7,7 @@ package {'nginx':
 exec {'install':
   command  => 'sudo apt-get update ; sudo apt-get -y install nginx',
   provider => shell,
+}
 
 exec {'Holberton':
   command  => 'echo "Holberton School" | sudo tee /var/www/html/index.html',
@@ -18,5 +19,5 @@ exec {'sudo sed -i "s/listen 80 default_server;/listen 80 default_server;\\n\\tl
 }
 
 exec {'run':
-  command => 'sudo service nginx start',
+  command => '/usr/sbin/service nginx start',
 }
