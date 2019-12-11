@@ -5,8 +5,7 @@ sudo apt-get update
 sudo apt-get install -y nginx
 
 echo "Holberton School" | sudo tee /var/www/html/index.html
-new_string="listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/www.youtube.com/watch?v=xJJsoquu70o\/;\\n\\t}"
-sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-enabled/default
-sudo nginx -t
+new_string="listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/www.youtube.com\/watch?v=xJJsoquu70o\/;\\n\\t}"
+sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-available/default
 
 sudo service nginx restart
