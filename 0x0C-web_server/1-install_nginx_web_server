@@ -4,7 +4,7 @@
 apt-get update
 atp-get install -y nginx
 
-echo "Holberton School" > /var/www/html/index.html
+echo "Holberton School for the win!" > /var/www/html/index.html
 printf %s "server {
      listen      80 default_server;
      listen      [::]:80 default_server;
