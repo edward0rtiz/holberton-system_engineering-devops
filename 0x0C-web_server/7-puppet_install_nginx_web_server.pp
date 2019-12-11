@@ -2,25 +2,17 @@
 
 package {'nginx':
   ensure => 'installed',
-  ensure => 'present',
-}->
+}
 
-file {'/var/www/html/index.html':
-  content => 'Holberton School'
-}->
+exec {'Holberton':
+  command => '/bin/echo "Holberton School" > /var/www/html/index.html',
+  returns => [0,2]
+}
 
-file_line { 'title':
-  ensure => 'present',
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'server_name _',
-  line   => 'rewrite ^/redirect_me https://www.youtube.com permanent;',
-}->
-
-service {'nginx':
-  ensure  => 'running',
-  require => 'Package['nginx'],
-}->
+exec {'sed -i "s/listen 80 default_server;/listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/www.youtube.com\/;\\n\\t}/" /etc/nginx/sites-available/default':
+  path => '/usr/bin:/usr/sbin:/bin',
+}
 
 exec {'run':
-  command => 'usr/sbin/service nginx start',
+  command => '/usr/sbin/service nginx start',
 }
