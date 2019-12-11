@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #Configure your Nginx server to have a custom 404 page that contains the string
 
-apt-get update
-apt-get install -y nginx
+apt-get -y update
+apt-get -y install nginx
 
 echo "Holberton School" | sudo tee /var/www/html/index.html
 new_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=xJJsoquu70o permanent;"
 sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page\n" | sudo tee /var/www/html/404.html
-second_string="server_name _;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+echo "Ceci n'est pas une page\n" | sudo tee /usr/share/nginx/html/404.html
+second_string="server_name _;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
 sudo sed -i "s/server_name _;/$second_string/" /etc/nginx/sites-available/default
 
 sudo service nginx restart
