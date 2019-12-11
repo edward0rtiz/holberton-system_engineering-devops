@@ -7,7 +7,7 @@ apt-get install -y nginx
 echo "Holberton School" | sudo tee /var/www/html/index.html
 new_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=xJJsoquu70o permanent;"
 sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+echo "Ceci n'est pas une page\n" | sudo tee /var/www/html/404.html
 second_string="server_name _;\n\terror_page 404 \/404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
 sudo sed -i "s/server_name _;/$second_string/" /etc/nginx/sites-available/default
 
