@@ -19,5 +19,6 @@ exec {'sudo sed -i "s/listen 80 default_server;/listen 80 default_server;\\n\\tl
 }
 
 exec {'run':
-  command => '/usr/sbin/service nginx start',
+  command  => 'sudo service nginx restart',
+  provider => shell,
 }
