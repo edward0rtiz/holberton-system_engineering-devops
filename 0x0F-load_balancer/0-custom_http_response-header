@@ -2,8 +2,8 @@
 #Install Nginx with server 0x01 config
 # add HTTP header named X-Served-By $HOSTNAME
 
-sudo apt-get update
-sudo apt-get install -y nginx
+apt-get update
+apt-get install -y nginx
 
 mkdir -p /var/www/html
 touch /var/www/html/index.html
