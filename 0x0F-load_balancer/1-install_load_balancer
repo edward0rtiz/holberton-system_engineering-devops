@@ -5,7 +5,7 @@ add-apt-repository -y ppa:vbernat/haproxy-1.8
 apt-get update
 apt-get install -y haproxy=1.8.\*
 
-load_balancer="frontend http
+load_balancer="\nfrontend http\n
 \tbind *:80
 \tmode http
 \tdefault_backend load_b
