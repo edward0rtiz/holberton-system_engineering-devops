@@ -5,35 +5,18 @@ add-apt-repository -y ppa:vbernat/haproxy-1.8
 apt-get update
 apt-get install -y haproxy=1.8.\*
 
-echo "ENABLED=1" >> /etc/default/haproxy
-mv /etc/haproxy/haproxy.cfg{,.original}
-touch /etc/haproxy/haproxy.cfg
+load_balancer="frontend http
+\tbind *:80
+\tmode http
+\tdefault_backend load_b
 
-printf %s "global
-    log 127.0.0.1 local0 notice
-    maxconn 2000
-    user haproxy
-    group haproxy
-
-defaults
-    log global
-    mode http
-    option httplog
-    option dontlognull
-    timeout connect 5000
-    timeout client 10000
-    timeout server 10000
-
-listen load_balancer
-    bind 0.0.0.0:80
-    mode http
-    stats enable
-    stats uri /haproxy?stats
-    balance roundrobin
-    option httpclose
-    option forwardfor
-    server 931-web-01 35.185.103.0:80 check
-    server 931-web-02 35.237.21.105:80 check
-" >> /etc/haproxy/haproxy.cfg
+backend load_b
+\tbalance roundrobin
+\toption forwardfor
+\tserver 931-web-01 35.185.103.0:80 check
+\tserver 931-web-02 35.237.21.105:80 check
+"
+echo -e "ENABLED=1\n" | sudo tee -a /etc/default/haproxy
+echo -e "$load_balancer" | sudo tee -a /etc/haproxy/haproxy.cfg
 
 service haproxy restart
