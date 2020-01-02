@@ -12,8 +12,8 @@ load_balancer="frontend http
 
 backend load_b
 \tbalance roundrobin
-\tserver 931-web-01 35.185.103.0:80 check
-\tserver 931-web-02 35.237.21.105:80 check
+\tserver web-01 35.185.103.0:80 check
+\tserver web-02 35.237.21.105:80 check
 "
 echo -e "ENABLED=1\n" | sudo tee -a /etc/default/haproxy
 echo -e "$load_balancer" | sudo tee -a /etc/haproxy/haproxy.cfg
