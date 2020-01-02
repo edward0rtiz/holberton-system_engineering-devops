@@ -24,7 +24,7 @@ defaults
     timeout client 10000
     timeout server 10000
 
-frontend
+listen load_balancer
     bind 0.0.0.0:80
     mode http
     stats enable
@@ -36,4 +36,4 @@ frontend
     server 931-web-02 35.237.21.105:80 check
 " >> /etc/haproxy/haproxy.cfg
 
-service haproxy start
+service haproxy restart
