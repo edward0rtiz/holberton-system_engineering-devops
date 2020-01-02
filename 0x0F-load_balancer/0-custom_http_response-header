@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#Install Nginx with server 0x01 config
-# add HTTP header named X-Served-By $HOSTNAME
+# Install Nginx with server 0x01 config
+#+ add HTTP header named X-Served-By $HOSTNAME
 
 apt-get update
 apt-get install -y nginx
