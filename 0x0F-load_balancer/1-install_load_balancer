@@ -12,7 +12,6 @@ load_balancer="frontend http
 
 backend load_b
 \tbalance roundrobin
-\toption forwardfor
 \tserver 931-web-01 35.185.103.0:80 check
 \tserver 931-web-02 35.237.21.105:80 check
 "
