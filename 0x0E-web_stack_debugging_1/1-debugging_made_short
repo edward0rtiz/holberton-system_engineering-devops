@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
+kill "$(pgrep 'nginx' | head -1)"
