@@ -1,7 +1,7 @@
 #automate task 0 but with Puppet
 
 exec {'update':
-  command => '/usr/bin/apt-get update'},
+  command => '/usr/bin/apt-get update',
 }
 -> package {'nginx':
   ensure => 'present',
