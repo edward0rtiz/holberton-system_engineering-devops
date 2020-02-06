@@ -10,10 +10,10 @@ def top_ten(subreddit):
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:73.0) \
         Gecko/20100101 Firefox/73.0"
     }
-    params = {
+    param = {
         "limit": 10
     }
-    response = r.get(url, headers=headers, params=params, allow_redirects=False)
+    response = r.get(url, headers=headers, params=param, allow_redirects=False)
     if response.status_code == 404:
         print("None")
         return
