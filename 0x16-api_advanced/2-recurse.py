@@ -8,13 +8,12 @@ def recurse(subreddit, hot_list=[], after=""):
     headers = {
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:73.0) \
         Gecko/20100101 Firefox/73.0"
-        }    
+        }
     param = {
         "after": after,
         "limit": 100,
     }
-    response = r.get(url, headers=headers, params=param,
-                            allow_redirects=False)
+    response = r.get(url, headers=headers, params=param, allow_redirects=False)
     if response.status_code == 404:
         return None
     else:
