@@ -1,10 +1,9 @@
-# 0x15 Javascript - Web JQuery :wrench:
+# 0x00 Shell, basics :wrench:
 
 > Using a shell script is most useful for repetitive tasks that may be time consuming to execute by typing one line at a time. A few examples of applications shell scripts can be used for include: Automating the code compiling process. Running a program or creating a program environment. Over the following projects you will see implemanttions of scrpits for DevOps tasks in a real SWE enviroment. This project covers the basic of shell
- 
+
 At the end of this project, I was able to solve these questions:
 
-General
 * What does RTFM mean?
 * What is a Shebang
 * What is the Shell
@@ -87,7 +86,7 @@ General
 - BASH
 - Debian 9 stable / Ubuntu 16.04 / Ubuntu 18.04 
 
-### Try It On Your Machine :computer:	
+### Try It On Your Machine :computer:
 ```bash
 git clone https://github.com/edward0rtiz/holberton-system_engineering-devops.git
 cd 0x00-shell_basics
