@@ -43,7 +43,7 @@ At the end of this project, I was able to solve these questions:
 - BASH
 - Debian 9 stable / Ubuntu 16.04 / Ubuntu 18.04 
 - Shellcheck
-- MySQL 5.7.x
+- Python 3.5
 
 
 ### Try It On Your Machine :computer:
