@@ -36,7 +36,7 @@ For the benchmarking, we are using ApacheBench which is a quite popular tool in 
 ### Try It On Your Machine :computer:
 ```bash
 git clone https://github.com/edward0rtiz/holberton-system_engineering-devops.git
-cd 0x17-web_stack_debugging_3
+cd 0x1B-web_stack_debugging_4/
 cat FILENAME
 puppet apply 0-the_sky_is_the_limit_not.pp
 su - holberton
