@@ -10,12 +10,6 @@ For the containers that you are given in this project as well as the checker, ev
 
 
 
-At the end of this project, I was able to solve these questions:
-
-* What is HTTPS SSL 2 main roles
-* What is the purpose encrypting traffic
-* What SSL termination means
-
 
 ## Tasks :heavy_check_mark:
 
